@@ -1,5 +1,5 @@
 // João Vitor de Souza Mota
-// Roteiro 1
+// Roteiro TESTE
 
 parameter divide_by=100000000;  // divisor do clock de referência
 // A frequencia do clock de referencia é 50 MHz.
@@ -19,7 +19,7 @@ module top(input  logic clk_2,
            output logic lcd_MemWrite, lcd_Branch, lcd_MemtoReg, lcd_RegWrite);
 
   always_comb begin
-    SEG <= SWI;
+    LED <= SWI;
     lcd_WriteData <= SWI;
     lcd_pc <= 'h12;
     lcd_instruction <= 'h34567890;
@@ -39,9 +39,18 @@ module top(input  logic clk_2,
     lcd_b <= {SWI, 56'hFEDCBA09876543};
   end
 
-always_comb begin
-  SEG <= SWI;
-  LED <= SWI;
-end
+parameter LETRA_A = 'b01110111;
+parameter LETRA_F = 'b01110001;
+parameter LETRA_P = 'b01110011;
+parameter NBITS_NOTA = 4;
+
+logic [NBITS_NOTA-1:0] nota;
+
+always_comb nota <= SWI;
+
+always_comb
+      if (nota>=7) SEG <= LETRA_A;
+  else if (nota>=4) SEG <= LETRA_F;
+  else              SEG <= LETRA_P;
 
 endmodule
