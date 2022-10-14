@@ -1,4 +1,4 @@
-// João Vitor de Souza Mota (120111057)
+// João Vitor de Souza Mota
 // Roteiro 1
 
 parameter divide_by=100000000;  // divisor do clock de referência
@@ -39,13 +39,9 @@ module top(input  logic clk_2,
     lcd_b <= {SWI, 56'hFEDCBA09876543};
   end
 
-  logic [3:0] contador;
-
-  always_ff @(posedge clk_2) begin
-     contador <= contador+1;
-  end
-
-  always_comb LED[0] <= clk_2;  
-  always_comb LED[7:4] <= contador;
+always_comb begin
+  SEG <= SWI;
+  LED <= SWI;
+end
 
 endmodule
