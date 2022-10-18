@@ -51,7 +51,7 @@ always_comb porta <= SWI[0];
 always_comb relogio <= SWI[1];
 always_comb interruptor <= SWI[2];
 
-// Cheguei na fórmula que (relogio' OR (interruptor AND porta'))
+// Cheguei na expressão booleana (relogio' OR (interruptor AND porta')) que representa o sistema. 
 always_comb
        if ((relogio == 0) | (interruptor == 1) & (porta == 0)) LED[1] <= ALARME_DESATIVADO;
   else                                                         LED[1] <= ALARME_ATIVADO;
