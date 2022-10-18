@@ -51,24 +51,7 @@ always_comb porta <= SWI[0];
 always_comb relogio <= SWI[1];
 always_comb interruptor <= SWI[2];
 
-// Cheguei na expressão booleana (relogio' OR (interruptor AND porta')) que representa o sistema. 
-always_comb
-       if ((relogio == 0) & (interruptor == 0) & (porta == 1)) LED[1] <= ALARME_ATIVADO;
-  else                                                         LED[1] <= ALARME_DESATIVADO;
-
-// /*============ PROBLEMA 2 ============*/
-// parameter INCONSISTENCIA = 'b10000000;
-// parameter AQUECEDOR = 'b1;
-// parameter RESFRIADOR = 'b1;
-
-// logic [1:0] t1;
-// logic [1:0] t2;
-
-// // Atribuição de entradas
-// always_comb t1 <= SWI[7];
-// always_comb t2 <= SWI[6];
-
-// LED[7] <= 
-// LED[6] <=
+// Cheguei na expressão: porta AND (interruptor OR relogio')), através da tabela verdade do sistema
+always_comb LED[1] <= ((porta == 1) & ((interruptor == 1) | (relogio == 0)));
 
 endmodule
