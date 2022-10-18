@@ -54,4 +54,16 @@ always_comb interruptor <= SWI[2];
 // Cheguei na expressão: porta AND (interruptor OR relogio')), através da tabela verdade do sistema
 always_comb LED[1] <= ((porta == 1) & ((interruptor == 1) | (relogio == 0)));
 
+/*============ PROBLEMA 2 ============*/
+logic [1:0] t1;
+logic [1:0] t2;
+
+// Atribuição de entradas
+always_comb t1 <= SWI[7]; // Temperaturas iguais ou maiores que 15°C
+always_comb t2 <= SWI[6]; // Temperaturas iguais ou maiores que 20°C
+
+always_comb LED[7] <= ((t1 == 0) & (t2 == 0));
+always_comb LED[6] <= ((t1 == 1) & (t2 == 1));
+always_comb SEG[7] <= ((t1 == 0) & (t2 == 1));
+
 endmodule
