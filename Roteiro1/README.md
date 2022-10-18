@@ -4,24 +4,33 @@
 Uma agência bancária possui um cofre que só pode ser aberto no horário do expediente do banco e este horário é controlado por um relógio eletrônico. Durante o expediente, um interruptor situado na mesa do gerente deve estar desligado para que o cofre possa ser aberto. Se as condições descritas não forem satisfeitas e, mesmo assim, o cofre for aberto, deve-se soar uma sirene de alarme, ou seja, para não soar o alarme na abertura do cofre, deve-se estar em horário de expediente e com o interruptor desligado.
 
 ### Entrada (Sensores)
+
 **Porta do cofre**
 cofre = 0 - porta aberta
 cofre = 1 - porta fechada
 chave `SWI[0]` 
+
 **Relógio eletrônico**
+
 relogio = 0 - fora do expediente
 relogio = 1 - horário de expediente
 chave `SWI[1]`
+
 **Interruptor na mesa do gerente**
+
 gerente = 0 - alarme desativado
 gerente = 1 - alarme ativado
 chave `SWI[2]`
 
 ### Saída (Atuadores)
+
 **Alarme**
+
 0 – silencioso
 1 – gerando sinal sonoro
+
 sinal luminoso `LED[1]`
+
 *Construir, em FPGA, o circuito do alarme do cofre.*
 
 ## Problema 2 - Estufa
