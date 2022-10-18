@@ -5,34 +5,35 @@ Uma agência bancária possui um cofre que só pode ser aberto no horário do ex
 
 ### Entrada (Sensores)
 
-**Porta do cofre**
+```
+Porta do cofre
 cofre = 0 - porta aberta
 cofre = 1 - porta fechada
-chave `SWI[0]` 
+chave SWI[0]
 
-**Relógio eletrônico**
+Relógio eletrônico
 
 relogio = 0 - fora do expediente
 relogio = 1 - horário de expediente
-chave `SWI[1]`
+chave SWI[1]
 
-**Interruptor na mesa do gerente**
+Interruptor na mesa do gerente
 
 gerente = 0 - alarme desativado
 gerente = 1 - alarme ativado
-chave `SWI[2]`
-
+chave SWI[2]
+```
 ### Saída (Atuadores)
 
-**Alarme**
-
+```
+Alarme
 0 – silencioso
 1 – gerando sinal sonoro
 
-sinal luminoso `LED[1]`
+sinal luminoso LED[1]
 
-*Construir, em FPGA, o circuito do alarme do cofre.*
-
+Construir, em FPGA, o circuito do alarme do cofre.
+```
 ## Problema 2 - Estufa
 Uma estufa deve manter a temperatura interna sempre na faixa entre 15°C e 20°C controlada automaticamente por um sistema de controle digital. Para tanto, foram instalados internamente dois sensores de temperatura que fornecem níveis lógicos 0 e 1 nas seguintes condições:
 
