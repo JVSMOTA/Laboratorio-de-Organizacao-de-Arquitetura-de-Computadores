@@ -19,7 +19,6 @@ module top(input  logic clk_2,
            output logic lcd_MemWrite, lcd_Branch, lcd_MemtoReg, lcd_RegWrite);
 
   always_comb begin
-    LED <= SWI;
     lcd_WriteData <= SWI;
     lcd_pc <= 'h12;
     lcd_instruction <= 'h34567890;
@@ -39,18 +38,22 @@ module top(input  logic clk_2,
     lcd_b <= {SWI, 56'hFEDCBA09876543};
   end
 
-parameter LETRA_A = 'b01110111;
-parameter LETRA_F = 'b01110001;
-parameter LETRA_P = 'b01110011;
-parameter NBITS_NOTA = 4;
+/*============ PROBLEMA 1 ============*/
+parameter ALARME_ATIVADO = 'b1;
+parameter ALARME_DESATIVADO = 'b0;
 
-logic [NBITS_NOTA-1:0] nota;
+logic [1:0] porta;
+logic [1:0] relogio;
+logic [1:0] interruptor;
 
-always_comb nota <= SWI;
+// Atribuição das entradas
+always_comb porta <= SWI[0];
+always_comb relogio <= SWI[1];
+always_comb interruptor <= SWI[2];
 
+// Cheguei na fórmula que (relogio' OR (interruptor AND porta'))
 always_comb
-       if (nota>=7) SEG <= LETRA_A;
-  else if (nota>=4) SEG <= LETRA_F;
-  else              SEG <= LETRA_P;
+       if ((relogio == 0) | (interruptor == 1) & (porta == 0)) LED[1] <= ALARME_DESATIVADO;
+  else                                                         LED[1] <= ALARME_ATIVADO;
 
 endmodule
