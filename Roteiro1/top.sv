@@ -52,7 +52,11 @@ always_comb relogio <= SWI[1];
 always_comb interruptor <= SWI[2];
 
 // Cheguei na expressão: porta AND (interruptor OR relogio')), através da tabela verdade do sistema
-always_comb LED[1] <= ((porta == 1) & ((interruptor == 1) | (relogio == 0)));
+always_comb begin
+  if ((porta == 1) & ((interruptor == 1) | (relogio == 0))) LED[1] <= ALARME_ATIVADO;
+  else                                                      LED[1] <= ALARME_DESATIVADO;
+
+end
 
 /*============ PROBLEMA 2 ============*/
 logic [1:0] t1;
