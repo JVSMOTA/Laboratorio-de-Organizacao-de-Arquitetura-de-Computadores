@@ -40,21 +40,21 @@ module top(input  logic clk_2,
 
 /*============ PROBLEMA 1 ============*/
 parameter            ADEQUADA = 'b00000000;
-parameter     BAIXA_UMIDADE_0 = 'b11111110;
-parameter     BAIXA_UMIDADE_1 = 'b01100000;
-parameter BAIXA_UMIDADE_0_E_1 = 'b11011010;
+parameter     BAIXA_UMIDADE_0 = 'b00111111;
+parameter     BAIXA_UMIDADE_1 = 'b00000110;
+parameter BAIXA_UMIDADE_0_E_1 = 'b01011011;
 
 logic [1:0] entrada_1;
 logic [1:0] entrada_2;
 
 // Atribuição de Entradas
-always_comb entrada_1 SWI[0];
-always_comb entrada_2 SWI[1];
+always_comb entrada_1 <= SWI[0];
+always_comb entrada_2 <= SWI[1];
 
 always_comb begin
        if ((entrada_1 == 0) & (entrada_2 == 0)) SEG <= ADEQUADA;
-  else if ((entrada_1 == 0) & (entrada_2 == 1)) SEG <= BAIXA_UMIDADE_0;
-  else if ((entrada_1 == 1) & (entrada_2 == 0)) SEG <= BAIXA_UMIDADE_1;
+  else if ((entrada_1 == 0) & (entrada_2 == 1)) SEG <= BAIXA_UMIDADE_1;
+  else if ((entrada_1 == 1) & (entrada_2 == 0)) SEG <= BAIXA_UMIDADE_0;
   else                                          SEG <= BAIXA_UMIDADE_0_E_1;
 end
 
