@@ -35,12 +35,12 @@ sinal luminoso LED[1]
 Construir, em FPGA, o circuito do alarme do cofre.
 ```
 ## Problema 2 - Estufa
-Uma estufa deve manter a temperatura interna sempre na faixa entre 15°C e 20°C controlada automaticamente por um sistema de controle digital. Para tanto, foram instalados internamente dois sensores de temperatura que fornecem níveis lógicos 0 e 1 nas seguintes condições:
+Uma estufa deve manter a temperatura interna sempre na faixa entre 15°C e 20°C controlada automaticamente por um sistema de controle digital. Para tanto, foram instalados internamente dois sensores de temperatura que fornecem níveis lógicos `0` e `1` nas seguintes condições:
 ```
 T1 = 1 para temperatura ≥ 15°C: chave SWI[7]; e
 T2 = 1 para temperatura ≥ 20°C: chave SWI[6].
 ```
-Construir, em FPGA, o sistema de controle da temperatura desta estufa a partir do acionamento de um aquecedor A (`LED[7]`) ou um resfriador R (`LED[6]`) sempre que a temperatura interna cair abaixo de 15°C ou subir acima de 20°C, respectivamente. Em caso de inconsistência dos sinais dos sensores de temperatura, um sinal luminoso vermelho (`SEG[7]`) deve acender e, nem o resfriamento nem o aquecimento, devem ser acionados.
+Construir, em FPGA, o sistema de controle da temperatura desta estufa a partir do acionamento de um aquecedor **A** (`LED[7]`) ou um resfriador **R** (`LED[6]`) sempre que a temperatura interna cair abaixo de 15°C ou subir acima de 20°C, respectivamente. Em caso de inconsistência dos sinais dos sensores de temperatura, um sinal luminoso vermelho (`SEG[7]`) deve acender e, nem o resfriamento nem o aquecimento, devem ser acionados.
 
 ### Tabela Verdade Problema 1
 
