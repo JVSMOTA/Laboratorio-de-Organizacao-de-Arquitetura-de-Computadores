@@ -39,6 +39,40 @@ module top(input  logic clk_2,
   end
 
 /*============ PROBLEMA 1 ============*/
+parameter            ADEQUADA = 'b00000000;
+parameter     BAIXA_UMIDADE_0 = 'b00111111;
+parameter     BAIXA_UMIDADE_1 = 'b00000110;
+parameter BAIXA_UMIDADE_0_E_1 = 'b01011011;
+
+logic [1:0] entrada_1;
+logic [1:0] entrada_2;
+
+// Atribuição de Entradas
+always_comb entrada_1 <= SWI[0];
+always_comb entrada_2 <= SWI[1];
+
+always_comb begin
+       if ((entrada_1 == 0) & (entrada_2 == 0)) SEG <= ADEQUADA;
+  else if ((entrada_1 == 0) & (entrada_2 == 1)) SEG <= BAIXA_UMIDADE_1;
+  else if ((entrada_1 == 1) & (entrada_2 == 0)) SEG <= BAIXA_UMIDADE_0;
+  else                                          SEG <= BAIXA_UMIDADE_0_E_1;
+end
 
 /*============ PROBLEMA 2 ============*/
+logic [3:0] entrada_a;
+logic [3:0] entrada_b;
+logic [1:0] selecao_entrada;
+
+// Atribuição de Entradas
+always_comb entrada_a <= SWI[7:6];
+always_comb entrada_b <= SWI[5:4];
+
+// Variável de Seleção do MUX
+always_comb selecao_entrada <= SWI[3];
+
+always_comb begin
+  if (selecao_entrada == 0) LED[7:6] <= entrada_a;
+  else                      LED[7:6] <= entrada_b;
+end
+
 endmodule

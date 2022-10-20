@@ -11,8 +11,8 @@ Você precisa projetar um circuito para controlar um sistema de irrigação auto
 | 10 | Área 1 com baixa umidade e Área 0 com umidade adequada. |
 | 11 | Áreas 1 e 0 com baixa umidade. |
 
-
 Você deve usar o display de 7 segmentos (`SEG[7:0]`) para indicar quais áreas estão com baixa umidade, de acordo com a codificação a seguir.
+
 ```
 Display apagado: as duas áreas com umidade adequada;
 Display mostrando 0: área 0 com baixa umidade;
