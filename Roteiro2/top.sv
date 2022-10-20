@@ -59,8 +59,8 @@ always_comb begin
 end
 
 /*============ PROBLEMA 2 ============*/
-logic [3:0] entrada_a;
-logic [3:0] entrada_b;
+logic [1:0] entrada_a;
+logic [1:0] entrada_b;
 logic [1:0] selecao_entrada;
 
 // Atribuição de Entradas
