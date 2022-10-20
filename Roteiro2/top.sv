@@ -59,4 +59,20 @@ always_comb begin
 end
 
 /*============ PROBLEMA 2 ============*/
+logic [3:0] entrada_a;
+logic [3:0] entrada_b;
+logic [1:0] selecao_entrada;
+
+// Atribuição de Entradas
+always_comb entrada_a <= SWI[7:6];
+always_comb entrada_b <= SWI[5:4];
+
+// Variável de Seleção do MUX
+always_comb selecao_entrada <= SWI[3];
+
+always_comb begin
+  if (selecao_entrada == 0) LED[7:6] <= entrada_a;
+  else                      LED[7:6] <= entrada_b;
+end
+
 endmodule
