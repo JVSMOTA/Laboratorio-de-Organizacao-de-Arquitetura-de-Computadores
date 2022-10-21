@@ -39,21 +39,20 @@ module top(input  logic clk_2,
   end
 
 /*============ PROBLEMA 1 ============*/
-// parameter ZERO =      'b00111111;
-// parameter UM =        'b00000110;
-// parameter DOIS =      'b01011011;
-// parameter TRES =      'b01001111;
-// parameter QUATRO =    'b01100110;
-// parameter CINCO =     'b01101101;
-// parameter SEIS =      'b01111101;
-// parameter SETE =      'b00000111;
-// parameter OITO =      'b01111111;
-// parameter NOVE =      'b01101111;
-// parameter OVERFLOW =  'b10111111;
-// parameter UNDERFLOW = 'b10111110;
+parameter MENOS_QUATRO = 'b11100110;
+parameter MENOS_TRES =   'b11001111;
+parameter MENOS_DOIS =   'b11011011;
+parameter MENOS_UM =     'b10000110;
+parameter ZERO =         'b00111111;
+parameter UM =           'b00000110;
+parameter DOIS =         'b01011011;
+parameter TRES =         'b01001111;
+parameter QUATRO =       'b01100110;
+parameter OVERFLOW =     'b10111111;
+parameter UNDERFLOW =    'b10111110;
 
-logic [1:0] a;
-logic [1:0] b;
+logic [2:0] a;
+logic [2:0] b;
 logic [1:0] f;
 
 // Atribuição de Entradas
@@ -63,12 +62,39 @@ always_comb b <= SWI[2:0];
 // Variável de Seleção do MUX 4:1
 always_comb f <= SWI[4:3];
 
-// Implementação do CASE para MUX 4:1
-case (f)
-  2'b00:   LED[2:0] <= (a + b);
-  2'b01:   LED[2:0] <= (a - b);
-  2'b10:   LED[2:0] <= (a & b);
-  default: LED[2:0] <= (a | b);
-endcase
+// Implementação do IF para MUX 4:1
+always_comb begin
+       if (f == 'b00) begin
+        LED[2:0] <= (a + b);
+             if (a + b == 'b111) SEG[7:0] <= MENOS_QUATRO;
+        else if (a + b == 'b110) SEG[7:0] <= MENOS_TRES;
+        else if (a + b == 'b101) SEG[7:0] <= MENOS_DOIS;
+        else if (a + b == 'b100) SEG[7:0] <= MENOS_UM;
+        else if (a + b == 'b000) SEG[7:0] <= ZERO;
+        else if (a + b == 'b001) SEG[7:0] <= UM;
+        else if (a + b == 'b010) SEG[7:0] <= DOIS;
+        else                     SEG[7:0] <= TRES;
+       end
+
+  else if (f == 'b01) begin
+        LED[2:0] <= (a - b);
+             if (a - b == 'b111) SEG[7:0] <= MENOS_QUATRO;
+        else if (a - b == 'b110) SEG[7:0] <= MENOS_TRES;
+        else if (a - b == 'b101) SEG[7:0] <= MENOS_DOIS;
+        else if (a - b == 'b100) SEG[7:0] <= MENOS_UM;
+        else if (a - b == 'b000) SEG[7:0] <= ZERO;
+        else if (a - b == 'b001) SEG[7:0] <= UM;
+        else if (a - b == 'b010) SEG[7:0] <= DOIS;
+        else                     SEG[7:0] <= TRES; 
+       end
+
+  else if (f == 'b10) LED[2:0] <= (a & b);
+  else                LED[2:0] <= (a | b);
+end
+
+always_comb begin
+     if ((a + b) > 3)    SEG[7:0] <= OVERFLOW;
+else                     SEG[7:0] <= UNDERFLOW;
+end 
 
 endmodule
