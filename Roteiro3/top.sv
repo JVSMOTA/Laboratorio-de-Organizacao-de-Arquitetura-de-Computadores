@@ -39,6 +39,36 @@ module top(input  logic clk_2,
   end
 
 /*============ PROBLEMA 1 ============*/
+// parameter ZERO =      'b00111111;
+// parameter UM =        'b00000110;
+// parameter DOIS =      'b01011011;
+// parameter TRES =      'b01001111;
+// parameter QUATRO =    'b01100110;
+// parameter CINCO =     'b01101101;
+// parameter SEIS =      'b01111101;
+// parameter SETE =      'b00000111;
+// parameter OITO =      'b01111111;
+// parameter NOVE =      'b01101111;
+// parameter OVERFLOW =  'b10111111;
+// parameter UNDERFLOW = 'b10111110;
 
+logic [1:0] a;
+logic [1:0] b;
+logic [1:0] f;
+
+// Atribuição de Entradas
+always_comb a <= SWI[7:5];
+always_comb b <= SWI[2:0];
+
+// Variável de Seleção do MUX 4:1
+always_comb f <= SWI[4:3];
+
+// Implementação do CASE para MUX 4:1
+case (f)
+  2'b00:   LED[2:0] <= (a + b);
+  2'b01:   LED[2:0] <= (a - b);
+  2'b10:   LED[2:0] <= (a & b);
+  default: LED[2:0] <= (a | b);
+endcase
 
 endmodule
