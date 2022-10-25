@@ -47,12 +47,11 @@ parameter ZERO =         'b00111111;
 parameter UM =           'b00000110;
 parameter DOIS =         'b01011011;
 parameter TRES =         'b01001111;
-parameter QUATRO =       'b01100110;
 parameter OVERFLOW =     'b10111111;
-parameter UNDERFLOW =    'b10111110;
 
 logic [2:0] a;
 logic [2:0] b;
+logic [2:0] c;
 logic [1:0] f;
 
 // Atribuição de Entradas
@@ -64,37 +63,32 @@ always_comb f <= SWI[4:3];
 
 // Implementação do IF para MUX 4:1
 always_comb begin
-       if (f == 'b00) begin
-        LED[2:0] <= (a + b);
-             if (a + b == 'b111) SEG[7:0] <= MENOS_QUATRO;
-        else if (a + b == 'b110) SEG[7:0] <= MENOS_TRES;
-        else if (a + b == 'b101) SEG[7:0] <= MENOS_DOIS;
-        else if (a + b == 'b100) SEG[7:0] <= MENOS_UM;
-        else if (a + b == 'b000) SEG[7:0] <= ZERO;
-        else if (a + b == 'b001) SEG[7:0] <= UM;
-        else if (a + b == 'b010) SEG[7:0] <= DOIS;
-        else                     SEG[7:0] <= TRES;
-       end
+  if (f == 'b00) begin
+    c <= (a + b);
+    LED[2:0] <= (a + b);
+    if ((c < 4) & (c > -5)) begin
+      case (c)
+        3'b000  : SEG[7:0] <= ZERO;
+        3'b001  : SEG[7:0] <= UM;
+        3'b010  : SEG[7:0] <= DOIS;
+        3'b011  : SEG[7:0] <= TRES;
+        3'b100  : SEG[7:0] <= MENOS_UM;
+        3'b101  : SEG[7:0] <= MENOS_DOIS;
+        3'b110  : SEG[7:0] <= MENOS_TRES;
+        3'b111  : SEG[7:0] <= MENOS_QUATRO;
+        default : SEG[7:0] <= ZERO;
+      endcase
+    end
+    else          SEG[7:0] <= OVERFLOW;
+  end
 
   else if (f == 'b01) begin
-        LED[2:0] <= (a - b);
-             if (a - b == 'b111) SEG[7:0] <= MENOS_QUATRO;
-        else if (a - b == 'b110) SEG[7:0] <= MENOS_TRES;
-        else if (a - b == 'b101) SEG[7:0] <= MENOS_DOIS;
-        else if (a - b == 'b100) SEG[7:0] <= MENOS_UM;
-        else if (a - b == 'b000) SEG[7:0] <= ZERO;
-        else if (a - b == 'b001) SEG[7:0] <= UM;
-        else if (a - b == 'b010) SEG[7:0] <= DOIS;
-        else                     SEG[7:0] <= TRES; 
-       end
+    c <= (a - b);
+    LED[2:0] <= (a - b);
+  end
 
   else if (f == 'b10) LED[2:0] <= (a & b);
   else                LED[2:0] <= (a | b);
 end
-
-always_comb begin
-     if ((a + b) > 3)    SEG[7:0] <= OVERFLOW;
-else                     SEG[7:0] <= UNDERFLOW;
-end 
 
 endmodule
