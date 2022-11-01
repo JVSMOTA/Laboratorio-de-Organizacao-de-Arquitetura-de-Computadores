@@ -49,9 +49,9 @@ parameter DOIS =         'b01011011;
 parameter TRES =         'b01001111;
 parameter OVERFLOW =     'b10111111;
 
-logic [2:0] a;
-logic [2:0] b;
-logic [2:0] c;
+logic signed [2:0] a;
+logic signed [2:0] b;
+logic signed [2:0] c;
 logic [1:0] f;
 
 // Atribuição de Entradas
@@ -68,15 +68,15 @@ always_comb begin
     LED[2:0] <= (a + b);
     if ((c < 4) & (c > -5)) begin
       case (c)
-        3'b000  : SEG[7:0] <= ZERO;
-        3'b001  : SEG[7:0] <= UM;
-        3'b010  : SEG[7:0] <= DOIS;
-        3'b011  : SEG[7:0] <= TRES;
-        3'b100  : SEG[7:0] <= MENOS_UM;
-        3'b101  : SEG[7:0] <= MENOS_DOIS;
-        3'b110  : SEG[7:0] <= MENOS_TRES;
-        3'b111  : SEG[7:0] <= MENOS_QUATRO;
-        default : SEG[7:0] <= ZERO;
+        3'b0000  : SEG[7:0] <= ZERO;
+        3'b0001  : SEG[7:0] <= UM;
+        3'b0010  : SEG[7:0] <= DOIS;
+        3'b0011  : SEG[7:0] <= TRES;
+        3'b1100  : SEG[7:0] <= MENOS_UM;
+        3'b1101  : SEG[7:0] <= MENOS_DOIS;
+        3'b1110  : SEG[7:0] <= MENOS_TRES;
+        3'b1111  : SEG[7:0] <= MENOS_QUATRO;
+        default : SEG[7:0] <= OVERFLOW;
       endcase
     end
     else          SEG[7:0] <= OVERFLOW;
