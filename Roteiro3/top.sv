@@ -47,7 +47,7 @@ parameter ZERO =         'b00111111;
 parameter UM =           'b00000110;
 parameter DOIS =         'b01011011;
 parameter TRES =         'b01001111;
-parameter OVERFLOW =     'b10111111;
+parameter OVERFLOW =     'b10000000;
 
 logic signed [2:0] a;
 logic signed [2:0] b;
@@ -62,33 +62,42 @@ always_comb b <= SWI[2:0];
 always_comb f <= SWI[4:3];
 
 // Implementação do IF para MUX 4:1
-always_comb begin
-  if (f == 'b00) begin
-    c <= (a + b);
+always begin
+
+  if (f == 'b00) begin                    // Caso 1
     LED[2:0] <= (a + b);
-    if ((c < 4) & (c > -5)) begin
-      case (c)
-        3'b0000  : SEG[7:0] <= ZERO;
-        3'b0001  : SEG[7:0] <= UM;
-        3'b0010  : SEG[7:0] <= DOIS;
-        3'b0011  : SEG[7:0] <= TRES;
-        3'b1100  : SEG[7:0] <= MENOS_UM;
-        3'b1101  : SEG[7:0] <= MENOS_DOIS;
-        3'b1110  : SEG[7:0] <= MENOS_TRES;
-        3'b1111  : SEG[7:0] <= MENOS_QUATRO;
-        default : SEG[7:0] <= OVERFLOW;
-      endcase
-    end
-    else          SEG[7:0] <= OVERFLOW;
+    c <= (a + b);
+    case (c)
+    3'b100  : SEG[7:0] <= MENOS_QUATRO;
+    3'b101  : SEG[7:0] <= MENOS_TRES;
+    3'b110  : SEG[7:0] <= MENOS_DOIS;
+    3'b111  : SEG[7:0] <= MENOS_UM;
+    3'b000  : SEG[7:0] <= ZERO;
+    3'b001  : SEG[7:0] <= UM;
+    3'b010  : SEG[7:0] <= DOIS;
+    3'b011  : SEG[7:0] <= TRES;
+    default : SEG[7:0] <= OVERFLOW;
+    endcase
   end
 
-  else if (f == 'b01) begin
-    c <= (a - b);
+  else if (f == 'b01) begin                 // Caso 2
     LED[2:0] <= (a - b);
+    c <= (a - b);
+    case (c)
+    3'b100  : SEG[7:0] <= MENOS_QUATRO;
+    3'b101  : SEG[7:0] <= MENOS_TRES;
+    3'b110  : SEG[7:0] <= MENOS_DOIS;
+    3'b111  : SEG[7:0] <= MENOS_UM;
+    3'b000  : SEG[7:0] <= ZERO;
+    3'b001  : SEG[7:0] <= UM;
+    3'b010  : SEG[7:0] <= DOIS;
+    3'b011  : SEG[7:0] <= TRES;
+    default : SEG[7:0] <= OVERFLOW;
+    endcase
   end
 
-  else if (f == 'b10) LED[2:0] <= (a & b);
-  else                LED[2:0] <= (a | b);
+  else if (f == 'b10) LED[2:0] <= (a & b); // Caso 3
+  else                LED[2:0] <= (a | b); // Caso 4
 end
 
 endmodule
