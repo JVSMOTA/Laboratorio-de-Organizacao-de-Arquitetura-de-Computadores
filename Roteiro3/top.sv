@@ -64,7 +64,8 @@ always_comb f <= SWI[4:3];
 // Implementação do IF para MUX 4:1
 always begin
 
-  if (f == 'b00) begin                    // Caso 1
+// Caso 1
+  if (f == 'b00) begin
     LED[2:0] <= (a + b);
     c <= (a + b);
     case (c)
@@ -80,7 +81,8 @@ always begin
     endcase
   end
 
-  else if (f == 'b01) begin                 // Caso 2
+// Caso 2
+  else if (f == 'b01) begin                 
     LED[2:0] <= (a - b);
     c <= (a - b);
     case (c)
@@ -96,8 +98,11 @@ always begin
     endcase
   end
 
-  else if (f == 'b10) LED[2:0] <= (a & b); // Caso 3
-  else                LED[2:0] <= (a | b); // Caso 4
+// Caso 3
+  else if (f == 'b10) LED[2:0] <= (a & b);
+
+// Caso 4
+  else                LED[2:0] <= (a | b);
 end
 
 endmodule
