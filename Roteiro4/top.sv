@@ -40,4 +40,37 @@ module top(input  logic clk_2,
 
 /*============ PROBLEMA 1 ============*/
 
+logic [1:0] f;
+
+// Variável de Seleção
+always_comb f <= SWI[1:0];
+
+// Implementação das condições do modo de funcionamento
+always begin
+
+// Caso 1 - Registrador Paralelo/Serial de 4 bits
+  if (f == 'b00) begin
+    logic reset [1:0];
+    logic serialParalelo [1:0];
+    logic paralela [4:0];
+    logic serial [1:0];
+
+    always_comb reset <= SWI[2];
+    always_comb serialParalelo <= SWI[3];
+
+    if (serialParalelo == 'b0) begin
+      always_comb serial <= SWI[7];
+    end
+    else always_comb paralela <= SWI[7:4];
+
+  end
+
+// Caso 2 - Memória RAM R/W 4x4
+  else if (f == 'b01 || f == 'b11) begin
+  end
+
+// Caso 3 - Memória RAM ROM 4x4
+  else
+end
+
 endmodule
