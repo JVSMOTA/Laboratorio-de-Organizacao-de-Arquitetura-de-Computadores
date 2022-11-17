@@ -39,38 +39,46 @@ module top(input  logic clk_2,
   end
 
 /*============ PROBLEMA 1 ============*/
+logic reset;
+logic select;
+logic serial_in;
+logic serial_out [3:0];
+logic paralelo_in [3:0];
+logic paralelo_out [3:0];
+logic data_out [3:0];
 
-logic [1:0] f;
+always_comb reset <= SWI[1];
+always_comb select <= SWI[2];
+always_comb serial_in <= SWI[3];
+always_comb paralelo_in <= SWI[7:4];
 
-// Variável de Seleção
-always_comb f <= SWI[1:0];
-
-// Implementação das condições do modo de funcionamento
-always begin
-
-// Caso 1 - Registrador Paralelo/Serial de 4 bits
-  if (f == 'b00) begin
-    logic reset [1:0];
-    logic serialParalelo [1:0];
-    logic paralela [4:0];
-    logic serial [1:0];
-
-    always_comb reset <= SWI[2];
-    always_comb serialParalelo <= SWI[3];
-
-    if (serialParalelo == 'b0) begin
-      always_comb serial <= SWI[7];
+always_ff @( posedge reset or posedge clk_2 ) begin
+  // Registrador Paralelo
+  if (select) begin
+    if (reset) begin
+      paralelo_out <= 0;
+      data_out <= 0;
     end
-    else always_comb paralela <= SWI[7:4];
-
+    else begin
+      paralelo_out <= paralelo_in;
+      data_out <= paralelo_out;
+    end
   end
 
-// Caso 2 - Memória RAM R/W 4x4
-  else if (f == 'b01 || f == 'b11) begin
+  // Registrador Serial
+  else begin
+    if (reset) begin
+      serial_out <= 0;
+      data_out <= 0;
+    end
+    else begin
+      serial_out <= {serial_in, serial_out[3:0]};
+      data_out <= serial_out;
+    end
   end
 
-// Caso 3 - Memória RAM ROM 4x4
-  else
 end
+
+always_comb LED[7:4] <= data_out;
 
 endmodule

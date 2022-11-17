@@ -16,51 +16,37 @@
     Todos os circuitos devem coexistir, ou seja, quando for mostrar o segundo circuito, o primeiro deverá se manter em funcionamento.
         Você deve enviar apenas um arquivo com o nome top.sv.
 ```
-## Problema 1
 
 Implementar um sistema de armazenamento que possa funcionar nos seguintes modos:
 
-```
-1. registrador paralelo/serial de 4 bits;
-2. memória RAM R/W 4x4;
-3. memória RAM ROM 4x4.
-```
-Para selecionar o modo de funcionamento, você deverá usar as switches 0 e 1 (`SWI[1:0]`) considerando a codificação a seguir.
-
-| SWI[1:0] | Função |
-| -- | -- |
-| 00 | registrador paralelo/serial de 4 bits |
-| 01 ou 11 | memória RAM R/W 4x4 |
-| 10 | memória RAM ROM 4x4 |
-
-### Registrador paralelo/serial de 4 bits
+## Problema 1 - Registrador paralelo/serial de 4 bits
 Esse registrador deverá realizar o armazenamento de forma serial ou paralela, conforme a descrição a seguir.
 
 | Entrada | Função |
 | -- | -- |
-| SWI[2] | switch de reset para "zerar" o registrador; |
-| SWI[3] | seleção da entrada serial (0) ou paralela (1); |
-| SWI[7:4] | entrada paralela; |
-| SWI[7] | entrada serial (caso a função entrada serial seja selecionada); |
-| LED[7:4] | exibição da saída. |
+| SWI[1] | switch de reset para "zerar" o registrador |
+| SWI[2] | seleção da entrada serial (0) ou paralela (1) |
+| SWI[3] | entrada serial (caso a função entrada serial seja selecionada) |
+| SWI[7:4] | entrada paralela |
+| LED[7:4] | exibição da saída |
 
-### Memória RAM R/W 4x4
+## Problema 2 - Memória RAM R/W 4x4
 Esta memória deverá funcionar conforme a descrição a seguir.
 
 | Entrada | Função |
 | -- | -- |
-| SWI[1] | seleção de escrita (1) ou leitura (0); |
-| SWI[3:2] | endereço de entrada; |
-| SWI[7:4] | dados de entrada; |
-| LED[7:4] | exibição da saída. |
+| SWI[1] | seleção de escrita (1) ou leitura (0) |
+| SWI[3:2] | endereço de entrada |
+| SWI[7:4] | dados de entrada |
+| LED[7:4] | exibição da saída |
 
-### Memória RAM ROM 4x4
+## Problema 3 - Memória RAM ROM 4x4
 Esta memória deverá funcionar conforme a descrição a seguir.
 
 | Entrada | Função |
 | -- | -- |
-| SWI[3:2] | endereço de entrada; |
-| LED[7:4] | exibição da saída. |
+| SWI[3:2] | endereço de entrada |
+| LED[7:4] | exibição da saída |
 
 
 **_OBS: Os seguintes dados devem ser armazenados na memória._**
