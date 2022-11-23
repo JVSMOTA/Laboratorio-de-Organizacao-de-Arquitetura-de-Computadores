@@ -52,7 +52,7 @@ parameter OITO   = 'b01111111;
 parameter NOVE   = 'b01101111;
 parameter A      = 'b01110111;
 parameter B      = 'b01111100;
-parameter C      = 'b01001100;
+parameter C      = 'b00111001;
 parameter D      = 'b01011110;
 parameter E      = 'b01111001;
 parameter F      = 'b01110001;
@@ -78,8 +78,7 @@ always_ff @(posedge reset or posedge clk_2) begin
 end
 
 always_comb LED[7] <= clk_2;
-
-case (Count)
+always_comb case (Count)
   4'b0000 : SEG[7:0] <= ZERO;
   4'b0001 : SEG[7:0] <= UM;
   4'b0010 : SEG[7:0] <= DOIS;
