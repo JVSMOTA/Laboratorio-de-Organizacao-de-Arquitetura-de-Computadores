@@ -97,4 +97,9 @@ always_comb case (Count)
   default : SEG[7:0] <= F;
 endcase
 
+/*============ DETECTOR DE SEQUENCIA ============*/
+/*===================== FSM =====================*/
+
+
+
 endmodule
