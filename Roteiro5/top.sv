@@ -100,6 +100,38 @@ endcase
 /*============ DETECTOR DE SEQUENCIA ============*/
 /*===================== FSM =====================*/
 
+logic in_bit, out_bit;
+always_comb in_bit <= SWI[3];
 
+enum logic [1:0] {A1, B2, C3, D4} state;
+
+always_ff @ (posedge clk_2)
+  if (reset) state <= A1;
+  else
+    unique case (state)
+      A1:
+        if (in_bit == 0)
+          state <= A1;
+        else
+          state <= B2;
+      B2:
+        if (in_bit == 0)
+          state <= A1;
+        else
+          state <= C3;
+      C3:
+        if (in_bit == 0)
+          state <= A1;
+        else
+          state <= D4;
+      D4:
+        if (in_bit == 0)
+          state <= A1;
+        else
+          state <= D4;
+    endcase
+
+always_comb out_bit <= (state == D4);
+always_comb LED[0] <= out_bit;
 
 endmodule
