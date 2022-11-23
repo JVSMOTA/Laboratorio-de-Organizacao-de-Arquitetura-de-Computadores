@@ -18,7 +18,7 @@
 
 ## Descrição
 
-Construir, em FPGA, um circuito contendo um Contador Síncrono Hexadecimal de 4 bits e uma FSM que detecta uma sequência de pelo menos três bits 1 conforme a descrição a seguir.
+Construir, em FPGA, um circuito contendo um **Contador Síncrono Hexadecimal de 4 bits** e uma **FSM** que detecta uma sequência de **pelo menos três bits 1** conforme a descrição a seguir.
 
 _Na descrição abaixo, observe que o **reset** deve afetar os dois circuitos simultaneamente._
 
