@@ -31,9 +31,9 @@ fim:
 >2) Qual é o conteúdo (em decimal) dos registradores a0, a1 e a2 ao final da execução do programa?
 
 ```
-a0 : 0x00000005
-a1 : 0x00000020
-a2 : 0x00000005
+a0 : 5
+a1 : 32
+a2 : 5
 ```
 
 >3) Quais são os valores de loop e fim?
