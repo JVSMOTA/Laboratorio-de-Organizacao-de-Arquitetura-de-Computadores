@@ -26,7 +26,7 @@ fim:
 >1) Qual é a operação realizada pelo código acima?
 
 ```
-Uma operação de Loop com Range de tamanho igual a 5 (hexadecimal) de passo tamanho igual a 1 (hexadecimal), enquanto no registrador a1 ocorre o slli (Shift Left Lógic by Immediate), que acaba dobrando o valor até atingir o tamanho igual a 20 (hexadecimal). 
+Uma operação de Loop com Range de tamanho igual a 5 (hexadecimal) de passo tamanho igual a 1 (hexadecimal), enquanto no registrador a1 ocorre o slli (Shift Left Logical by Immediate), que acaba dobrando o valor até atingir o tamanho igual a 20 (hexadecimal). 
 ``` 
 
 >2) Qual é o conteúdo (em decimal) dos registradores a0, a1 e a2 ao final da execução do programa?
