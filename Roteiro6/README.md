@@ -73,4 +73,4 @@ Responda as perguntas a seguir (as respostas deverão ser enviadas em um arquivo
 >
 >Quais são os conteúdos desses registradores ao final da execução do programa?
 >
->Adicione "prints" da tela do ambiente remoto ao PDF. Esses "prints" deverão mostrar os valores exibidos na interface após a execução de cada instrução (código de máquina, pc e demais registradores envolvidos).
+>**_Adicione "prints" da tela do ambiente remoto ao PDF. Esses "prints" deverão mostrar os valores exibidos na interface após a execução de cada instrução (código de máquina, pc e demais registradores envolvidos)._**
