@@ -14,6 +14,9 @@
 >
 >Você deverá enviar um arquivo PDF com as respostas para cada uma das perguntas indicadas nos problemas.
 Envie os 3 arquivos separadamente (**não envie um ZIP**).
+>
+>Recomendação: Use o [CloudConverter](https://cloudconvert.com/) para transformar em *.pdf*. 
+
 
 ## Problema 1 - Código em Assembly
 
