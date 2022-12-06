@@ -8,7 +8,7 @@
 >
 >AVA-LOAC;
 >
->Implementar o circuito utilizando um simulador de FPGA (Sugestão: [venus](https://venus.kvakil.me/).
+>Implementar o circuito utilizando um simulador de FPGA (Sugestão: [venus](https://venus.kvakil.me/)).
 >
 >Cada código deverá ser implementado e submetido em um arquivo. **Deverão ser enviados dois arquivos.** Um contendo o código em Assembly do problema 1 (inst1.s) e outro contendo o código de máquina, do problema 2, convertido para Assembly (inst2.s).
 >
