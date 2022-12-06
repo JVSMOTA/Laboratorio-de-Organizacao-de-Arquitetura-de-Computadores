@@ -18,27 +18,18 @@ Implementar, a partir do arquivo inst.101, o trecho de código abaixo para RISC-
 0x00000013
 ```
 
-1. Qual é a operação realizada pelo código acima?
+### 1) Qual é a operação realizada pelo código acima?
 
-```
+>
 
-```
+### 2) Qual é o conteúdo (em decimal) dos registradores a0, a1 e a2 ao final da execução do programa?
 
-2. Qual é o conteúdo (em decimal) dos registradores a0, a1 e a2 ao final da execução do programa?
+>
 
-```
+### 3) Quais são os valores de loop e fim?
 
-```
+>
 
-3. Quais são os valores de loop e fim?
+### 4) Adicione "prints" da tela do ambiente remoto ao arquivo PDF. Esses "prints" deverão mostrar todo o ambiente, incluindo o código em Assembly que foi executado e os valores exibidos na interface após a execução de cada instrução (código de máquina, pc e demais registradores envolvidos).
 
-```
-
-```
-
-4. Adicione "prints" da tela do ambiente remoto ao arquivo PDF. Esses "prints" deverão mostrar todo o ambiente, incluindo o código em Assembly que foi executado e os valores exibidos na interface após a execução de cada instrução (código de máquina, pc e demais registradores envolvidos).
-
-```
-
-```
-
+>

@@ -23,25 +23,25 @@ fim:
         nop
 ```
 
->1) Qual é a operação realizada pelo código acima?
+### 1) Qual é a operação realizada pelo código acima?
 
-```
-Uma operação de Loop com Range de tamanho igual a 5 (hexadecimal) de passo tamanho igual a 1 (hexadecimal), enquanto no registrador a1 ocorre o slli (Shift Left Logical by Immediate), que acaba dobrando o valor até atingir o tamanho igual a 20 (hexadecimal). 
-``` 
+>Uma operação de Loop com Range de tamanho igual a 5 (hexadecimal) de passo tamanho igual a 1 (hexadecimal), enquanto no registrador a1 ocorre o slli (Shift Left Logical by Immediate), que acaba dobrando o valor até atingir o tamanho igual a 20 (hexadecimal).  
 
->2) Qual é o conteúdo (em decimal) dos registradores a0, a1 e a2 ao final da execução do programa?
+### 2) Qual é o conteúdo (em decimal) dos registradores a0, a1 e a2 ao final da execução do programa?
 
-```
-a0 : 5
-a1 : 32
-a2 : 5
-```
+>a0 : 5
+>
+>a1 : 32
+>
+>a2 : 5
 
->3) Quais são os valores de loop e fim?
 
-```
-loop : -12
-fim  : 16
-```
+### 3) Quais são os valores de loop e fim?
 
->4) Adicione "prints" da tela do ambiente remoto ao arquivo PDF. Esses "prints" deverão mostrar todo o ambiente, incluindo o código em Assembly que foi executado e os valores exibidos na interface após a execução de cada instrução (código de máquina, pc e demais registradores envolvidos).
+>loop : -12
+>
+>fim  : 16
+
+### 4) Adicione "prints" da tela do ambiente remoto ao arquivo PDF. Esses "prints" deverão mostrar todo o ambiente, incluindo o código em Assembly que foi executado e os valores exibidos na interface após a execução de cada instrução (código de máquina, pc e demais registradores envolvidos).
+
+>
