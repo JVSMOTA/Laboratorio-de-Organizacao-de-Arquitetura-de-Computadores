@@ -2,25 +2,18 @@
 
 ## Observações
 
->Todas as recomendações para uso do arquivo “top.sv” estão disponíveis no AVA-LOAC;
->A atividade deverá ser enviada a partir dos seguintes "ambientes":
+>Todas as recomendações para uso dos arquivos “inst1.s” e "inst2.s" estão disponíveis no AVA-LOAC;
 >
->[FPGA Remoto](http://lad.ufcg.edu.br/hdl/remote.php) e
+>A atividade deverá ser enviada a partir do seguinte "ambiente":
+>
 >AVA-LOAC;
 >
->Sugestão: testar o circuito utilizando o [simulador de FPGA](http://lad.ufcg.edu.br/hdl/simulate.php).
+>Implementar o circuito utilizando um simulador de FPGA (Sugestão: [venus](https://venus.kvakil.me/).
 >
->Seu circuito deve funcionar no ambiente FPGA remoto.
->O simulador deve ser usado apenas para testar.
->
->Cada código deverá ser implementado e submetido em um arquivo. Deverão ser enviados dois arquivos. 
->Um contendo o código assembly (inst.s) e outro contendo o código de máquina (inst.101). 
->
->Código assembly: arquivo com nome inst.s.
->Código de máquina: arquivo com nome inst.101.
+>Cada código deverá ser implementado e submetido em um arquivo. **Deverão ser enviados dois arquivos.** Um contendo o código em Assembly do problema 1 (inst1.s) e outro contendo o código de máquina, do problema 2, convertido para Assembly (inst2.s).
 >
 >Você deverá enviar um arquivo PDF com as respostas para cada uma das perguntas indicadas nos problemas.
->Envie os 3 arquivos separadamente (não envie um ZIP).
+Envie os 3 arquivos separadamente (**não envie um ZIP**).
 
 ## Problema 1 - Código em Assembly
 
