@@ -38,7 +38,30 @@ fim:
 
 ### 4) Adicione "prints" da tela do ambiente remoto ao arquivo PDF. Esses "prints" deverão mostrar todo o ambiente, incluindo o código em Assembly que foi executado e os valores exibidos na interface após a execução de cada instrução (código de máquina, pc e demais registradores envolvidos).
 
->
+| PC | Valores Exibidos |
+| -- | -- |
+| 00 | ![00](/imagens/Questao1PC00.png) |
+| 04 | ![00](/imagens/Questao1PC04.png) |
+| 08 | ![00](/imagens/Questao1PC08.png) |
+| 0C | ![00](/imagens/Questao1PC0C.png) |
+| 10 | ![00](/imagens/Questao1PC10.png) |
+| 14 | ![00](/imagens/Questao1PC14.png) |
+| 18 | ![00](/imagens/Questao1PC18.png) |
+| 1C | ![00](/imagens/Questao1PC1C.png) |
+| 20 | ![00](/imagens/Questao1PC20.png) |
+| 24 | ![00](/imagens/Questao1PC24.png) |
+| 28 | ![00](/imagens/Questao1PC28.png) |
+| 2C | ![00](/imagens/Questao1PC2C.png) |
+| 30 | ![00](/imagens/Questao1PC30.png) |
+| 34 | ![00](/imagens/Questao1PC34.png) |
+| 38 | ![00](/imagens/Questao1PC38.png) |
+| 3C | ![00](/imagens/Questao1PC3C.png) |
+| 40 | ![00](/imagens/Questao1PC40.png) |
+| 44 | ![00](/imagens/Questao1PC44.png) |
+| 48 | ![00](/imagens/Questao1PC48.png) |
+| 4C | ![00](/imagens/Questao1PC4C.png) |
+| 50 | ![00](/imagens/Questao1PC50.png) |
+| 54 | ![00](/imagens/Questao1PC54.png) |
 
 ## Problema 2 - Código de Máquina
 
@@ -84,4 +107,13 @@ pulo:
 
 ### 5) Adicione "prints" da tela do ambiente remoto ao arquivo PDF. Esses "prints" deverão mostrar todo o ambiente, incluindo o código em Assembly que foi executado e os valores exibidos na interface após a execução de cada instrução (código de máquina, pc e demais registradores envolvidos).
 
->
+| PC | Valores Exibidos |
+| -- | -- |
+| 00 |  |
+| 04 |  |
+| 08 |  |
+| 0C |  |
+| 10 |  |
+| 14 |  |
+| 18 |  |
+| 1C |  |
