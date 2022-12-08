@@ -29,18 +29,12 @@ fim:
 
 ### 2) Qual é o conteúdo (em decimal) dos registradores a0, a1 e a2 ao final da execução do programa?
 
->a0 : 5
->
->a1 : 32
->
->a2 : 5
+>a0 = 5, a1 = 32 e a2 = 5.
 
 
 ### 3) Quais são os valores de loop e fim?
 
->loop : -12
->
->fim  : 16
+>loop = -12 e fim = 16.
 
 ### 4) Adicione "prints" da tela do ambiente remoto ao arquivo PDF. Esses "prints" deverão mostrar todo o ambiente, incluindo o código em Assembly que foi executado e os valores exibidos na interface após a execução de cada instrução (código de máquina, pc e demais registradores envolvidos).
 
@@ -82,19 +76,11 @@ pulo:
 
 ### 3) Quais são os registradores utilizados no código?
 
->x10
->
->x11
->
->x12
+>x10, x11 e x12.
 
 ### 4) Quais são os conteúdos desses registradores ao final da execução do programa?
 
->x10 = 0x00000002
->
->x11 = 0x00000004
->
->x12 = 0x00000004
+>x10 = 0x00000002, x11 = 0x00000004 e x12 = 0x00000004.
 
 ### 5) Adicione "prints" da tela do ambiente remoto ao arquivo PDF. Esses "prints" deverão mostrar todo o ambiente, incluindo o código em Assembly que foi executado e os valores exibidos na interface após a execução de cada instrução (código de máquina, pc e demais registradores envolvidos).
 
