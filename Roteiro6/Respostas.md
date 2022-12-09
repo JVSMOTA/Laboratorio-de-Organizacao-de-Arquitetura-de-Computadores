@@ -109,11 +109,10 @@ pulo:
 
 | PC | Valores Exibidos |
 | -- | -- |
-| 00 |  |
-| 04 |  |
-| 08 |  |
-| 0C |  |
-| 10 |  |
-| 14 |  |
-| 18 |  |
-| 1C |  |
+| 00 | ![00](/imagens/Questao2PC00.png) |
+| 04 | ![00](/imagens/Questao2PC04.png) |
+| 08 | ![00](/imagens/Questao2PC08.png) |
+| 0C | ![00](/imagens/Questao2PC0C.png) |
+| 10 | ![00](/imagens/Questao2PC10.png) |
+| 14 | ![00](/imagens/Questao2PC14.png) |
+| 18 | ![00](/imagens/Questao2PC18.png) |
