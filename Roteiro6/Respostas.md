@@ -95,7 +95,7 @@ pulo:
 
 ### 2) Qual é a operação realizada pelo código acima?
 
-> No PC = 00, adiciona o valor 2 ao registrador a0; no PC = 04, adiciona o valor 4 ao registrador a1; no PC = 0C, faz o beq (Bench if equal) entre a0 e a1, caso seja verdadeiro pula para o fim do código; no PC = 10, adiciona o valor do registrador a0 (2) somado mais a0 (2) em a2, resultando a2 = 4; no PC = 14, faz-se o jal (Jump and link) para o local chamado 'pulo' que representa um acréscimo de 8 instruções, caindo diretamente em nop, encerrando o código.    
+> No PC = 00, adiciona o valor 2 ao registrador a0; no PC = 04, adiciona o valor 4 ao registrador a1; no PC = 08, faz o beq (Bench if equal) entre a0 e a1, caso seja verdadeiro pula para o fim do código; no PC = 0C, adiciona o valor do registrador a0 (2) somado mais a0 (2) em a2, resultando a2 = 4; no PC = 10, faz-se o jal (Jump and link) para o local chamado 'pulo' que representa um acréscimo de 8 instruções, caindo diretamente em nop, com PC = 18, encerrando o código.
 
 ### 3) Quais são os registradores utilizados no código?
 
