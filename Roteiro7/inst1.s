@@ -3,7 +3,7 @@
 .text
 main:
 	addi a0, x0, 1                 # 1 - Print Int
-    addi a1, zero, 5               # Variável N
+    addi a1, zero, 4               # Variável N
     li a4, 2                       # a4 = 2
     add a2, zero, a1               # aux = N  
 loop:
