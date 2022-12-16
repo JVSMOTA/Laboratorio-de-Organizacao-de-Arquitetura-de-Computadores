@@ -15,6 +15,8 @@
 >Enviar os 3 arquivos separadamente (não enviar um ZIP).
 >
 >Para cada problema, forneça "prints" da tela do simulador ao arquivo PDF. Esses "prints" deverão mostrar todo o ambiente, incluindo o código em Assembly que foi executado e os valores exibidos na interface após a execução de cada instrução (código de máquina armazenado na memória, dado escrito na memória (se houver), valores do PC e dos demais registradores envolvidos).
+>
+>Recomendação: Use o [CloudConverter](https://cloudconvert.com/) para transformar em *.pdf*. 
 
 ## Problema 1 - Código em Assembly (Fatorial de N)
 Implementar em Assembly - RISC-V, um programa que calcula o fatorial de um número N. O arquivo submetido deverá ser nomeado como **inst1.s**.
